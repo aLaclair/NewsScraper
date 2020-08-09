@@ -61,6 +61,10 @@ app.get('/articles',function(req, res) {
     })
 })
 
+app.post("/articles/:id", function(req, res) {
+    console.log(req.body)
+  });
+
 app.listen(PORT, function() {
     console.log(`App on https://localhost:${PORT}`)
 })

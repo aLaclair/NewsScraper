@@ -25,7 +25,7 @@ html body .hero {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #e6e6e6;
+  color: #ececec;
 }
 
 html body .hero h1 {
@@ -46,9 +46,75 @@ html body .main {
 html body .main .articles {
   width: 100%;
   height: 90%;
-  background-color: rgba(128, 128, 128, 0.219);
-  border-radius: 5px;
   overflow-y: scroll;
+}
+
+html body .main .articles div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2% auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: rgba(160, 160, 160, 0.336);
+  width: 75%;
+  padding: 20px 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+html body .main .articles div .links {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: none;
+  width: 95%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body .main .articles div .links button {
+  background: burlywood;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html body .main .articles div .links button:hover {
+  background-color: #bd8e50;
+}
+
+html body .main .articles div .links a {
+  background: burlywood;
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html body .main .articles div .links a:visited {
+  color: white;
+}
+
+html body .main .articles div .links a:hover {
+  background-color: #bd8e50;
 }
 
 html body footer .links {
@@ -73,6 +139,7 @@ html body footer .links {
 html body footer .links button {
   margin: 0 30px;
   height: 50%;
+  width: 15%;
   border: none;
   border-radius: 5px;
   background-color: rgba(128, 128, 128, 0.479);
@@ -86,5 +153,16 @@ html body footer .links button:hover {
   background-color: #5e5e5e;
   border: 2px solid black;
   padding: 0px 30px;
+}
+
+html body footer .links button a {
+  min-width: 100%;
+  min-height: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+html body footer .links button a:visited {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
