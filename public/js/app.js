@@ -3,7 +3,7 @@ $(document).ready(function(){
         return
     })
 
-    $.get('/articles', function(data) {
+    $.get('/both', function(data) {
         $('.articles').empty()
         for (let i = 0; i < data.length; i++) {
             let post = $('<div>').attr('data-id', data[i]._id)
@@ -16,9 +16,31 @@ $(document).ready(function(){
             let links = $('<div>').attr('class', 'links')
             links.append(link, commentButton)
 
-            post.append(title,summary, links)
+            post.append(title, summary)
+
+            let comments = $('<div>').attr('class', 'comments')
+            if(data[i].comments.length > 0) {
+                for (let j = 0; j < data[i].comments.length; j++) {
+                    let commentWrap = $('<div>').attr({'class': 'comment_wrapper', 'id': data[i].comments[j]._id})
+                    let deleteBtn = $('<p>').attr('class', 'delete_comment').text('X')
+                    let comment = $('<p>').text(data[i].comments[j].comment)
+                    commentWrap.append(deleteBtn, comment)
+                    comments.append(commentWrap)
+                }
+                post.append(links,comments)
+            } else {
+                post.append(links)
+            }
             $('.articles').append(post)
         }
+        $('.delete_comment').click(function(){
+            let id = $(this).parent().attr('id')
+            $.get(`/delete/${id}`, async function(results) {
+                console.log('deleted')
+            }).then(function() {
+                location.reload()
+            })
+        })
         $('.comment_btn').click(function() {
             let div = $(this).parent().parent()
 
@@ -35,9 +57,14 @@ $(document).ready(function(){
             })
             $('#submit_btn').click(function() {
                 let comment = $('#comment_bar').val()
-                let id = $()
+                let commentObj = {comment: comment}
                 $('#comment_bar').val('')
-                
+                let id = $(this).parent().parent().attr('data-id')
+                $.post(`/articles/${id}`, commentObj, async function(data) {
+                    console.log(data)
+                }).then(function() {
+                    location.reload()
+                })
             })
         })
     })

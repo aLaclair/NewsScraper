@@ -5,6 +5,7 @@ let Schema = mongoose.Schema
 const articleSchema = new Schema({
     title: {
         type: String,
+        unique: true,
         required: true
     },
     summary: {
@@ -14,14 +15,17 @@ const articleSchema = new Schema({
     },
     link: {
         type: String,
+        unique: true,
         required: true,
     },
-    comment: {
-        type: Schema.Types.ObjectId,
-        ref: 'comments'
-    }
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Comments'
+        }
+    ]
 })
 
-const article = mongoose.model('Article', articleSchema)
+const Article = mongoose.model('Article', articleSchema)
 
-module.exports = article
+module.exports = Article

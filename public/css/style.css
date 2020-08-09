@@ -117,6 +117,96 @@ html body .main .articles div .links a:hover {
   background-color: #bd8e50;
 }
 
+html body .main .articles div .comments {
+  background: none;
+  margin: auto none;
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html body .main .articles div .comments .comment_wrapper {
+  width: 80%;
+  padding: initial 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+html body .main .articles div .comments .comment_wrapper .delete_comment {
+  cursor: pointer;
+  width: 25%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html body .main .articles div .comments .comment_wrapper .delete_comment:hover {
+  color: brown;
+}
+
+html body .main .articles div .comments .comment_wrapper p:not(.delete_comment) {
+  width: 75%;
+  margin: 0;
+  height: 100%;
+}
+
+html body .main .articles div .comment_div {
+  width: 70%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+html body .main .articles div .comment_div input {
+  width: 65%;
+  height: 50%;
+  border: none;
+}
+
+html body .main .articles div .comment_div #submit_btn {
+  width: 15%;
+  float: right;
+  border: none;
+  background: burlywood;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html body .main .articles div .comment_div #submit_btn:hover {
+  background-color: #bd8e50;
+}
+
+html body .main .articles div .comment_div #close_btn {
+  width: 15%;
+  float: left;
+  border: none;
+  background: burlywood;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html body .main .articles div .comment_div #close_btn:hover {
+  background-color: #bd8e50;
+}
+
 html body footer .links {
   background-color: rgba(169, 169, 169, 0.349);
   width: 100vw;

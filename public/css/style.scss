@@ -76,6 +76,65 @@ html {
                             }
                         }
                     }
+                    .comments {
+                        background: none;
+                        margin: auto none;
+                        width: 85%;
+                        display: flex;
+                        flex-direction: column;
+                        .comment_wrapper {
+                            width: 80%;
+                            padding: initial 0;
+                            display: flex;
+                            flex-direction: row;
+                            .delete_comment {
+                                cursor: pointer;
+                                width: 25%;
+                                transition: 0.3s;
+                                &:hover {
+                                    color: brown;
+                                }
+                            }
+                            p:not(.delete_comment) {
+                                width: 75%;
+                                margin: 0;
+                                height: 100%;
+                            }
+                        }
+                    }
+                    .comment_div {
+                        width: 70%;
+                        justify-content: space-evenly;
+                        display: flex;
+                        flex-direction: row;
+                        input {
+                            width: 65%;
+                            height: 50%;
+                            border: none;
+                        }
+                        #submit_btn {
+                            width: 15%;
+                            float: right;
+                            border: none;
+                            background: burlywood;
+                            color: white;
+                            transition: 0.3s;
+                            &:hover {
+                                background-color: rgb(189, 142, 80);
+                            }
+                        }
+                        #close_btn {
+                            width: 15%;
+                            float: left;
+                            border: none;
+                            background: burlywood;
+                            color: white;
+                            transition: 0.3s;
+                            &:hover {
+                                background-color: rgb(189, 142, 80);
+                            }
+                        }
+                    }
                 }
             }
         }
